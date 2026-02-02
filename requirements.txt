@@ -1,0 +1,49 @@
+# ============================================================
+# OccupyBed AI - Requirements (Fixed for Model Compatibility)
+# ============================================================
+
+# Install pip tools first
+pip>=23.2.1
+setuptools>=68.0.0
+wheel>=0.41.2
+
+# Core dependencies FIRST (no dependencies)
+joblib>=1.3.1  # Relaxed to allow newer versions if needed
+pytz==2023.3
+python-dateutil==2.8.2
+
+# Core data processing
+# NOTE: scikit-learn 1.6.1 usually requires newer numpy. 
+# We relax this to >=1.24.3 to try and satisfy both TF and Sklearn.
+numpy>=1.24.3
+scipy>=1.11.1
+
+# Data manipulation
+pandas==2.0.3
+
+# Visualization
+plotly==5.17.0
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Machine Learning
+# --- CRITICAL CHANGE HERE ---
+scikit-learn==1.6.1
+xgboost==2.0.0
+
+# Deep Learning
+# NOTE: If this conflicts with the new numpy/sklearn, you may need to upgrade TF or retrain the sklearn model.
+tensorflow-cpu==2.13.0
+keras==2.13.1
+
+# Web Framework
+streamlit==1.28.1
+
+# Utilities
+requests==2.31.0
+urllib3==2.0.4
+Pillow==10.0.0
+python-dotenv==1.0.0
+tqdm==4.65.0
+openpyxl==3.1.2
+pyarrow==13.0.0
