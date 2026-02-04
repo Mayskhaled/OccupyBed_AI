@@ -312,21 +312,6 @@ with st.sidebar:
         <div class="logo-slogan">ML-Powered Bed Management</div>
     </div>
     """, unsafe_allow_html=True)
-
-        
-    # Patient Search (from design.py)
-    st.markdown("### Patient Search")
-    search_q = st.text_input("Enter PIN", placeholder="e.g. PIN-2005")
-    if search_q:
-        res = df[(df['PIN'] == search_q) & (df['Actual_Discharge'].isna())]
-        if not res.empty:
-            r = res.iloc[0]
-            st.success(f"Found: {r['Department']}")
-            st.info(f"Bed: {r['Bed']}")
-        else:
-            st.warning("Not Active / Not Found")
-
-    st.markdown("---")
     
     # --- Your Navigation Radio ---
     menu = st.radio(
